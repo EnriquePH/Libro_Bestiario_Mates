@@ -32,3 +32,5 @@ eq:A001844
 función-techo-de-n2-medios-a000982
 eq:A000982-a
 eq:A000982-b
+eq:A000982-c
+eq:A000982-d

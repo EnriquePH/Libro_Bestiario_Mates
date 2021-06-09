@@ -10,8 +10,20 @@ En esta parte del libro
 $$A000982(n) = \{0, 1, 2, 5, 8, 13, 18, 25, 32, 41, 50, 61, 72, 85, 98, 113, 128, 145, 162, 181, 200,...\}$$
 \begin{equation}
 A000982(n) = \left\lceil \frac{n^2}{2} \right\rceil
-(\#eq:A000982)
+(\#eq:A000982-b)
 \end{equation}
+
+* __Problema__ - Sumar la serie:
+
+\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}}
+(\#eq:A000982-a)
+\end{equation}
+
+* __Solución__: 
+
+Para sumar la serie infinita, separamos la secuencia en otras dos, una que contiene los términos pares y la otra los impares.
+
 
 \begin{equation}
 A001105(n) = 2n^2
@@ -25,14 +37,13 @@ A001844(n) = 2n(n+1) + 1
 
 \begin{equation}
 \sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \sum_{m=1}^{\infty}{\frac{1}{2m^2}}  + \sum_{m=0}^{\infty}{\frac{1}{2m(m+1) + 1}} 
-  (\#eq:A000982-a)
+  (\#eq:A000982-c)
 \end{equation}
 
-Para sumar la serie infinita, separamos la secuencia en dos una con los términos pares y la otra con los impares.
 
 \begin{equation}
 \sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \frac{\zeta(2)}{2} + \frac{\pi}{2} \cdot \tanh(\frac{\pi}{2})
-  (\#eq:A000982-b)
+  (\#eq:A000982-d)
 \end{equation} 
 
 ### Función suelo de $n^2$ tercios, [A000212](https://oeis.org/A000212):
@@ -58,7 +69,7 @@ Separamos la secuencia problema, en tres secuencias, para sumarlas por separado
 \end{equation} 
 
 \begin{equation}
-\sum_{m=1}^{\infty}{\frac{1}{m(3m-2)}} = \frac{1}{12} (\sqrt{3}\pi + 9\log{3}) 
+\sum_{m=1}^{\infty}{\frac{1}{m(3m-2)}} = \frac{1}{12} (\pi\sqrt{3} + 9\log{3}) 
   (\#eq:A000567-b)
 \end{equation} 
 
@@ -74,6 +85,11 @@ Separamos la secuencia problema, en tres secuencias, para sumarlas por separado
   (\#eq:A045944-a)
 \end{equation}
 
+\begin{equation}
+\sum_{m=1}^{\infty}{\frac{1}{m(3m+2)}} = \frac{1}{12} (9 + \pi\sqrt{3} - 9\log{3}) 
+  (\#eq:A000567-b)
+\end{equation} 
+
 * Secuencia $3n^2$ [A033428](https://oeis.org/A033428):
 
 \begin{equation}
@@ -87,9 +103,10 @@ Separamos la secuencia problema, en tres secuencias, para sumarlas por separado
 \end{equation}
 
 \begin{equation}
-\sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3}
+\sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3} = \frac{\pi^2}{18}
   (\#eq:A033428-b)
 \end{equation} 
+
 
 
 ### Cuartos cuadrados ^[Anotaciones del 30/Jun/2013], secuencia [A002620](https://oeis.org/A002620)

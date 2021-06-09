@@ -24,7 +24,7 @@
 <meta name="author" content="Enrique Pérez Herrero" />
 
 
-<meta name="date" content="2021-06-08" />
+<meta name="date" content="2021-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,26 +182,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="función-techo-de-n2-medios-a000982" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Función techo de <span class="math inline">\(n^2\)</span> medios, <a href="https://oeis.org/A000982">A000982</a>:</h3>
 <p><span class="math display">\[A000982(n) = \{0, 1, 2, 5, 8, 13, 18, 25, 32, 41, 50, 61, 72, 85, 98, 113, 128, 145, 162, 181, 200,...\}\]</span>
-<span class="math display" id="eq:A000982">\[\begin{equation}
+<span class="math display" id="eq:A000982-b">\[\begin{equation}
 A000982(n) = \left\lceil \frac{n^2}{2} \right\rceil
 \tag{3.1}
 \end{equation}\]</span></p>
+<ul>
+<li><strong>Problema</strong> - Sumar la serie:</li>
+</ul>
+<p><span class="math display" id="eq:A000982-a">\[\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}}
+\tag{3.2}
+\end{equation}\]</span></p>
+<ul>
+<li><strong>Solución</strong>:</li>
+</ul>
+<p>Para sumar la serie infinita, separamos la secuencia en otras dos, una que contiene los términos pares y la otra los impares.</p>
 <p><span class="math display" id="eq:A001105">\[\begin{equation}
 A001105(n) = 2n^2
-\tag{3.2}
+\tag{3.3}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:A001844">\[\begin{equation}
 A001844(n) = 2n(n+1) + 1
-\tag{3.3}
+\tag{3.4}
 \end{equation}\]</span></p>
-<p><span class="math display" id="eq:A000982-a">\[\begin{equation}
+<p><span class="math display" id="eq:A000982-c">\[\begin{equation}
 \sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \sum_{m=1}^{\infty}{\frac{1}{2m^2}}  + \sum_{m=0}^{\infty}{\frac{1}{2m(m+1) + 1}} 
-  \tag{3.4}
-\end{equation}\]</span></p>
-<p>Para sumar la serie infinita, separamos la secuencia en dos una con los términos pares y la otra con los impares.</p>
-<p><span class="math display" id="eq:A000982-b">\[\begin{equation}
-\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \frac{\zeta(2)}{2} + \frac{\pi}{2} \cdot \tanh(\frac{\pi}{2})
   \tag{3.5}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A000982-d">\[\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \frac{\zeta(2)}{2} + \frac{\pi}{2} \cdot \tanh(\frac{\pi}{2})
+  \tag{3.6}
 \end{equation}\]</span></p>
 </div>
 <div id="función-suelo-de-n2-tercios-a000212" class="section level3">
@@ -209,7 +219,7 @@ A001844(n) = 2n(n+1) + 1
 <p><span class="math display">\[A000212(n) = \{0, 0, 1, 3, 5, 8, 12, 16, 21, 27, 33, 40, 48, 56, 65, 75,...\}\]</span>
 <span class="math display" id="eq:A000212-a">\[\begin{equation}
 A000212(n) = \left\lfloor \frac{n^2}{3} \right\rfloor
-\tag{3.6}
+\tag{3.7}
 \end{equation}\]</span></p>
 <p>Separamos la secuencia problema, en tres secuencias, para sumarlas por separado</p>
 <ul>
@@ -222,11 +232,11 @@ A000212(n) = \left\lfloor \frac{n^2}{3} \right\rfloor
 &amp; = \{1, 8, 21, 40, 65, 96, 133, 176, 225, 280, 341, 408, 481, 560,...\} \\
 &amp; = m(3m-2)
 \end{split}
-  \tag{3.7}
+  \tag{3.8}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:A000567-b">\[\begin{equation}
-\sum_{m=1}^{\infty}{\frac{1}{m(3m-2)}} = \frac{1}{12} (\sqrt{3}\pi + 9\log{3}) 
-  \tag{3.8}
+\sum_{m=1}^{\infty}{\frac{1}{m(3m-2)}} = \frac{1}{12} (\pi\sqrt{3} + 9\log{3}) 
+  \tag{3.9}
 \end{equation}\]</span></p>
 <ul>
 <li>Números rómbicos: <a href="https://oeis.org/A045944">A045944</a></li>
@@ -238,6 +248,10 @@ A000212(n) = \left\lfloor \frac{n^2}{3} \right\rfloor
 &amp; = \{5, 16, 33, 56, 85, 120, 161, 208, 261, 320, 385, 456, 533,...\} \\
 &amp; = m(3m+2)
 \end{split}
+  \tag{3.10}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A000567-b">\[\begin{equation}
+\sum_{m=1}^{\infty}{\frac{1}{m(3m+2)}} = \frac{1}{12} (9 + \pi\sqrt{3} - 9\log{3}) 
   \tag{3.9}
 \end{equation}\]</span></p>
 <ul>
@@ -250,11 +264,11 @@ A000212(n) = \left\lfloor \frac{n^2}{3} \right\rfloor
 &amp; = \{3, 12, 27, 48, 75, 108, 147, 192, 243, 300, 363, 432, 507,...\} \\
 &amp; = 3m^2
 \end{split}
-  \tag{3.10}
+  \tag{3.11}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:A033428-b">\[\begin{equation}
-\sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3}
-  \tag{3.11}
+\sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3} = \frac{\pi^2}{18}
+  \tag{3.12}
 \end{equation}\]</span></p>
 </div>
 <div id="cuartos-cuadrados-secuencia-a002620" class="section level3">
@@ -265,7 +279,7 @@ cuadrados perfectos (<a href="https://oeis.org/A000290">A000290</a>), mientras q
 términos impares son los números oblongos (<a href="https://oeis.org/A002378">A002378</a>).</p>
 <p><span class="math display" id="eq:A002620-a">\[\begin{equation}
 A002620(n) = \left\lfloor \frac{n^2}{4} \right\rfloor =  \left\lfloor \frac{n^2}{2} \right\rfloor \cdot \left\lceil \frac{n^2}{2} \right\rceil
-  \tag{3.12}
+  \tag{3.13}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:A002620-b">\[\begin{equation}
 \begin{split}
@@ -274,7 +288,7 @@ A002620(n) = \left\lfloor \frac{n^2}{4} \right\rfloor =  \left\lfloor \frac{n^2}
 &amp; = \zeta(2) + 1 \\
 &amp; = \frac{\pi^2}{6} + 1
 \end{split}
-\tag{3.13}
+\tag{3.14}
 \end{equation}\]</span></p>
 </div>
 <div id="generalización" class="section level3">
@@ -286,7 +300,7 @@ S(k)
 &amp; = \sum_{s=0}^{k-1}{\sum_{m=1}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}} \\
 &amp; = \frac{\zeta(2)}{k} + \sum_{s=1}^{k-1}{\sum_{m=1}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}}
 \end{split}
-  \tag{3.14}
+  \tag{3.15}
 \end{equation}\]</span></p>
 
 </div>
