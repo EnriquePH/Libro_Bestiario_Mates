@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Series Convergentes | Bestiario de Teoría de Números</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Series Convergentes | Bestiario de Teoría de Números" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Series Convergentes | Bestiario de Teoría de Números" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Enrique Pérez Herrero" />
+
+
+<meta name="date" content="2021-06-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="carnaval-de-la-función-indicatriz-de-euler.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="series-convergentes.html"><a href="series-convergentes.html"><i class="fa fa-check"></i><b>3</b> Series Convergentes</a><ul>
+<li class="chapter" data-level="3.1" data-path="series-convergentes.html"><a href="series-convergentes.html#funciones-de-parte-entera"><i class="fa fa-check"></i><b>3.1</b> Funciones de parte entera</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="series-convergentes.html"><a href="series-convergentes.html#función-techo-de-n2-medios-a000982"><i class="fa fa-check"></i><b>3.1.1</b> Función techo de <span class="math inline">\(n^2\)</span> medios, <span>A000982</span>:</a></li>
+<li class="chapter" data-level="3.1.2" data-path="series-convergentes.html"><a href="series-convergentes.html#función-suelo-de-n2-tercios-a000212"><i class="fa fa-check"></i><b>3.1.2</b> Función suelo de <span class="math inline">\(n^2\)</span> tercios, <span>A000212</span>:</a></li>
+<li class="chapter" data-level="3.1.3" data-path="series-convergentes.html"><a href="series-convergentes.html#cuartos-cuadrados-secuencia-a002620"><i class="fa fa-check"></i><b>3.1.3</b> Cuartos cuadrados, secuencia <span>A002620</span></a></li>
+<li class="chapter" data-level="3.1.4" data-path="series-convergentes.html"><a href="series-convergentes.html#generalización"><i class="fa fa-check"></i><b>3.1.4</b> Generalización</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="carnaval-de-la-función-indicatriz-de-euler.html"><a href="carnaval-de-la-función-indicatriz-de-euler.html"><i class="fa fa-check"></i><b>4</b> Carnaval de la Función Indicatriz de Euler</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bestiario de Teoría de Números</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="series-convergentes" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Series Convergentes</h1>
+<p>En esta parte del libro</p>
+<div id="funciones-de-parte-entera" class="section level2">
+<h2><span class="header-section-number">3.1</span> Funciones de parte entera</h2>
+<div id="función-techo-de-n2-medios-a000982" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Función techo de <span class="math inline">\(n^2\)</span> medios, <a href="https://oeis.org/A000982">A000982</a>:</h3>
+<p><span class="math display">\[A000982(n) = \{0, 1, 2, 5, 8, 13, 18, 25, 32, 41, 50, 61, 72, 85, 98, 113, 128, 145, 162, 181, 200,...\}\]</span>
+<span class="math display" id="eq:A000982">\[\begin{equation}
+A000982(n) = \left\lceil \frac{n^2}{2} \right\rceil
+\tag{3.1}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A001105">\[\begin{equation}
+A001105(n) = 2n^2
+\tag{3.2}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A001844">\[\begin{equation}
+A001844(n) = 2n(n+1) + 1
+\tag{3.3}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A000982-a">\[\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \sum_{m=1}^{\infty}{\frac{1}{2m^2}}  + \sum_{m=0}^{\infty}{\frac{1}{2m(m+1) + 1}} 
+  \tag{3.4}
+\end{equation}\]</span></p>
+<p>Para sumar la serie infinita, separamos la secuencia en dos una con los términos pares y la otra con los impares.</p>
+<p><span class="math display" id="eq:A000982-b">\[\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \frac{\zeta(2)}{2} + \frac{\pi}{2} \cdot \tanh(\frac{\pi}{2})
+  \tag{3.5}
+\end{equation}\]</span></p>
+</div>
+<div id="función-suelo-de-n2-tercios-a000212" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Función suelo de <span class="math inline">\(n^2\)</span> tercios, <a href="https://oeis.org/A000212">A000212</a>:</h3>
+<p><span class="math display">\[A000212(n) = \{0, 0, 1, 3, 5, 8, 12, 16, 21, 27, 33, 40, 48, 56, 65, 75,...\}\]</span>
+<span class="math display" id="eq:A000212-a">\[\begin{equation}
+A000212(n) = \left\lfloor \frac{n^2}{3} \right\rfloor
+\tag{3.6}
+\end{equation}\]</span></p>
+<p>Separamos la secuencia problema, en tres secuencias, para sumarlas por separado</p>
+<ul>
+<li>Números octagonales: <a href="https://oeis.org/A000567">A000567</a>:</li>
+</ul>
+<p><span class="math display" id="eq:A000567-a">\[\begin{equation}
+\begin{split}
+\left\lfloor \frac{(3m+2)^{2}}{3} \right\rfloor \\
+&amp; =  A000567(m) \\
+&amp; = \{1, 8, 21, 40, 65, 96, 133, 176, 225, 280, 341, 408, 481, 560,...\} \\
+&amp; = m(3m-2)
+\end{split}
+  \tag{3.7}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A000567-b">\[\begin{equation}
+\sum_{m=1}^{\infty}{\frac{1}{m(3m-2)}} = \frac{1}{12} (\sqrt{3}\pi + 9\log{3}) 
+  \tag{3.8}
+\end{equation}\]</span></p>
+<ul>
+<li>Números rómbicos: <a href="https://oeis.org/A045944">A045944</a></li>
+</ul>
+<p><span class="math display" id="eq:A045944-a">\[\begin{equation}
+\begin{split}
+\left\lfloor \frac{(3m+1)^{2}}{3} \right\rfloor \\
+&amp; =  A045944(m) \\
+&amp; = \{5, 16, 33, 56, 85, 120, 161, 208, 261, 320, 385, 456, 533,...\} \\
+&amp; = m(3m+2)
+\end{split}
+  \tag{3.9}
+\end{equation}\]</span></p>
+<ul>
+<li>Secuencia <span class="math inline">\(3n^2\)</span> <a href="https://oeis.org/A033428">A033428</a>:</li>
+</ul>
+<p><span class="math display" id="eq:A033428-a">\[\begin{equation}
+\begin{split}
+\left\lfloor \frac{(3m)^{2}}{3} \right\rfloor \\
+&amp; =  A033428(m) \\
+&amp; = \{3, 12, 27, 48, 75, 108, 147, 192, 243, 300, 363, 432, 507,...\} \\
+&amp; = 3m^2
+\end{split}
+  \tag{3.10}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A033428-b">\[\begin{equation}
+\sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3}
+  \tag{3.11}
+\end{equation}\]</span></p>
+</div>
+<div id="cuartos-cuadrados-secuencia-a002620" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Cuartos cuadrados,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> secuencia <a href="https://oeis.org/A002620">A002620</a></h3>
+<p><span class="math display">\[A002620(n) = \{0, 0, 1, 2, 4, 6, 9, 12, 16, 20, 25, 30, 36, 42, 49, 56,...\}\]</span>
+Se puede observar como los términos pares de la secuencia se corresponden a los
+cuadrados perfectos (<a href="https://oeis.org/A000290">A000290</a>), mientras que los
+términos impares son los números oblongos (<a href="https://oeis.org/A002378">A002378</a>).</p>
+<p><span class="math display" id="eq:A002620-a">\[\begin{equation}
+A002620(n) = \left\lfloor \frac{n^2}{4} \right\rfloor =  \left\lfloor \frac{n^2}{2} \right\rfloor \cdot \left\lceil \frac{n^2}{2} \right\rceil
+  \tag{3.12}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:A002620-b">\[\begin{equation}
+\begin{split}
+\sum_{n=2}^{\infty}{\frac{1}{A002620(n)}} &amp; = \sum_{n=2}^{\infty}{\frac{1}{ \left\lfloor\frac{n^2}{4}\right\rfloor}} \\
+&amp; = \sum_{m=1}^{\infty}{\frac{1}{m^2}} + \sum_{m=1}^{\infty}{\frac{1}{m(m+1)}} \\
+&amp; = \zeta(2) + 1 \\
+&amp; = \frac{\pi^2}{6} + 1
+\end{split}
+\tag{3.13}
+\end{equation}\]</span></p>
+</div>
+<div id="generalización" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Generalización</h3>
+<p><span class="math display" id="eq:gener">\[\begin{equation}
+\begin{split}
+S(k) 
+&amp; = \sum_{n=\lceil \sqrt{k} \rceil}^{\infty}{\frac{1}{\left\lfloor\frac{n^2}{k}\right\rfloor}} \\
+&amp; = \sum_{s=0}^{k-1}{\sum_{m=1}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}} \\
+&amp; = \frac{\zeta(2)}{k} + \sum_{s=1}^{k-1}{\sum_{m=1}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}}
+\end{split}
+  \tag{3.14}
+\end{equation}\]</span></p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Anotaciones del 30/Jun/2013<a href="series-convergentes.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="carnaval-de-la-función-indicatriz-de-euler.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-series.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

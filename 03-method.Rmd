@@ -1,0 +1,8 @@
+# Carnaval de la Función Indicatriz de Euler
+
+Función Indicatriz de Euler
+
+$\phi(n)  = \sum_{i=1}^{n}{[i \perp n]}$
+
+$\phi(n) =  \sum_{GCD(i, n)=1}{1}$
+

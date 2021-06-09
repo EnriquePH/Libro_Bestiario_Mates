@@ -1,0 +1,129 @@
+# Series Convergentes
+
+En esta parte del libro
+
+
+## Funciones de parte entera
+
+### Función techo de $n^2$ medios, [A000982](https://oeis.org/A000982):
+
+$$A000982(n) = \{0, 1, 2, 5, 8, 13, 18, 25, 32, 41, 50, 61, 72, 85, 98, 113, 128, 145, 162, 181, 200,...\}$$
+\begin{equation}
+A000982(n) = \left\lceil \frac{n^2}{2} \right\rceil
+(\#eq:A000982)
+\end{equation}
+
+\begin{equation}
+A001105(n) = 2n^2
+(\#eq:A001105)
+\end{equation}
+
+\begin{equation}
+A001844(n) = 2n(n+1) + 1
+(\#eq:A001844)
+\end{equation}
+
+\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \sum_{m=1}^{\infty}{\frac{1}{2m^2}}  + \sum_{m=0}^{\infty}{\frac{1}{2m(m+1) + 1}} 
+  (\#eq:A000982-a)
+\end{equation}
+
+Para sumar la serie infinita, separamos la secuencia en dos una con los términos pares y la otra con los impares.
+
+\begin{equation}
+\sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \frac{\zeta(2)}{2} + \frac{\pi}{2} \cdot \tanh(\frac{\pi}{2})
+  (\#eq:A000982-b)
+\end{equation} 
+
+### Función suelo de $n^2$ tercios, [A000212](https://oeis.org/A000212):
+
+$$A000212(n) = \{0, 0, 1, 3, 5, 8, 12, 16, 21, 27, 33, 40, 48, 56, 65, 75,...\}$$
+\begin{equation}
+A000212(n) = \left\lfloor \frac{n^2}{3} \right\rfloor
+(\#eq:A000212-a)
+\end{equation}
+
+Separamos la secuencia problema, en tres secuencias, para sumarlas por separado
+
+* Números octagonales: [A000567](https://oeis.org/A000567):
+
+\begin{equation}
+\begin{split}
+\left\lfloor \frac{(3m+2)^{2}}{3} \right\rfloor \\
+& =  A000567(m) \\
+& = \{1, 8, 21, 40, 65, 96, 133, 176, 225, 280, 341, 408, 481, 560,...\} \\
+& = m(3m-2)
+\end{split}
+  (\#eq:A000567-a)
+\end{equation} 
+
+\begin{equation}
+\sum_{m=1}^{\infty}{\frac{1}{m(3m-2)}} = \frac{1}{12} (\sqrt{3}\pi + 9\log{3}) 
+  (\#eq:A000567-b)
+\end{equation} 
+
+* Números rómbicos: [A045944](https://oeis.org/A045944)
+
+\begin{equation}
+\begin{split}
+\left\lfloor \frac{(3m+1)^{2}}{3} \right\rfloor \\
+& =  A045944(m) \\
+& = \{5, 16, 33, 56, 85, 120, 161, 208, 261, 320, 385, 456, 533,...\} \\
+& = m(3m+2)
+\end{split}
+  (\#eq:A045944-a)
+\end{equation}
+
+* Secuencia $3n^2$ [A033428](https://oeis.org/A033428):
+
+\begin{equation}
+\begin{split}
+\left\lfloor \frac{(3m)^{2}}{3} \right\rfloor \\
+& =  A033428(m) \\
+& = \{3, 12, 27, 48, 75, 108, 147, 192, 243, 300, 363, 432, 507,...\} \\
+& = 3m^2
+\end{split}
+  (\#eq:A033428-a)
+\end{equation}
+
+\begin{equation}
+\sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3}
+  (\#eq:A033428-b)
+\end{equation} 
+
+
+### Cuartos cuadrados ^[Anotaciones del 30/Jun/2013], secuencia [A002620](https://oeis.org/A002620)
+
+$$A002620(n) = \{0, 0, 1, 2, 4, 6, 9, 12, 16, 20, 25, 30, 36, 42, 49, 56,...\}$$
+Se puede observar como los términos pares de la secuencia se corresponden a los
+cuadrados perfectos ([A000290](https://oeis.org/A000290)), mientras que los
+términos impares son los números oblongos ([A002378](https://oeis.org/A002378)).
+
+\begin{equation}
+A002620(n) = \left\lfloor \frac{n^2}{4} \right\rfloor =  \left\lfloor \frac{n^2}{2} \right\rfloor \cdot \left\lceil \frac{n^2}{2} \right\rceil
+  (\#eq:A002620-a)
+\end{equation} 
+
+
+\begin{equation}
+\begin{split}
+\sum_{n=2}^{\infty}{\frac{1}{A002620(n)}} & = \sum_{n=2}^{\infty}{\frac{1}{ \left\lfloor\frac{n^2}{4}\right\rfloor}} \\
+& = \sum_{m=1}^{\infty}{\frac{1}{m^2}} + \sum_{m=1}^{\infty}{\frac{1}{m(m+1)}} \\
+& = \zeta(2) + 1 \\
+& = \frac{\pi^2}{6} + 1
+\end{split}
+(\#eq:A002620-b)
+\end{equation} 
+
+### Generalización
+
+\begin{equation}
+\begin{split}
+S(k) 
+& = \sum_{n=\lceil \sqrt{k} \rceil}^{\infty}{\frac{1}{\left\lfloor\frac{n^2}{k}\right\rfloor}} \\
+& = \sum_{s=0}^{k-1}{\sum_{m=1}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}} \\
+& = \frac{\zeta(2)}{k} + \sum_{s=1}^{k-1}{\sum_{m=1}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}}
+\end{split}
+  (\#eq:gener)
+\end{equation} 
+
