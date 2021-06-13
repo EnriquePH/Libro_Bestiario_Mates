@@ -1,4 +1,4 @@
-# Applications
+# On Kimberling's array
 
 Some _significant_ applications are demonstrated in this chapter.
 

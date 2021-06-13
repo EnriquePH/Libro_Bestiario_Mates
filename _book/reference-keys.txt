@@ -34,3 +34,4 @@ eq:A000982-a
 eq:A000982-b
 eq:A000982-c
 eq:A000982-d
+on-kimberlings-array
